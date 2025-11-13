@@ -30,35 +30,35 @@ app.use(cors());
 
 //Open Ai with endpoints
 
-app.post("/test", async (req, res) => {
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.SECREAT_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "user",
-          content: req.body.message,
-        },
-      ],
-    }),
-  };
+// app.post("/test", async (req, res) => {
+//   const options = {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${process.env.SECREAT_KEY}`,
+//     },
+//     body: JSON.stringify({
+//       model: "gpt-4o-mini",
+//       messages: [
+//         {
+//           role: "user",
+//           content: req.body.message,
+//         },
+//       ],
+//     }),
+//   };
 
-  try {
-    const response = await fetch(
-      "https://api.openai.com/v1/chat/completions",
-      options
-    );
-    const data = await response.json();
-    res.send(data.choices[0].message.content);
-  } catch (error) {
-    console.log(error);
-  }
-});
+//   try {
+//     const response = await fetch(
+//       "https://api.openai.com/v1/chat/completions",
+//       options
+//     );
+//     const data = await response.json();
+//     res.send(data.choices[0].message.content);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 app.listen(PORT, () => {
   console.log(`app is listening to port ${PORT}`);
