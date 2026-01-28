@@ -14,7 +14,7 @@ app.use("/api", chatRoutes);
 
 app.get("/test", async (req, res) => {
   res.json({
-    message: "test5: corred bug for test 4!",
+    message: "test6: corred bug for test 4!",
   });
 });
 
