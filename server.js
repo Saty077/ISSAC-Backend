@@ -17,7 +17,7 @@ app.get("/test", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`app is listening to port ${PORT}`);
+  console.log(`test1: app is listening to port ${PORT}`);
   connectDB();
 });
 
