@@ -14,8 +14,7 @@ app.use("/api", chatRoutes);
 
 app.get("/test", async (req, res) => {
   res.json({
-    message:
-      "test4: defined backup for .env in workflow for continious deployment!",
+    message: "test5: corred bug for test 4!",
   });
 });
 
