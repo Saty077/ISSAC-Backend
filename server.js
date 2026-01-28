@@ -13,11 +13,14 @@ app.use(cors());
 app.use("/api", chatRoutes);
 
 app.get("/test", async (req, res) => {
-  res.json({ message: "test3: this is test for deployment on EC2!" });
+  res.json({
+    message:
+      "test4: defined backup for .env in workflow for continious deployment!",
+  });
 });
 
 app.listen(PORT, () => {
-  console.log(`test1: app is listening to port ${PORT}`);
+  console.log(`app is listening to port ${PORT}`);
   connectDB();
 });
 
