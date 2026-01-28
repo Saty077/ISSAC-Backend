@@ -12,6 +12,10 @@ app.use(express.json());
 app.use(cors());
 app.use("/api", chatRoutes);
 
+app.get("/test", async (req, res) => {
+  res.json({ message: "this is test for deployment on EC2!" });
+});
+
 app.listen(PORT, () => {
   console.log(`app is listening to port ${PORT}`);
   connectDB();
