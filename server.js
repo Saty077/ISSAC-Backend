@@ -13,7 +13,7 @@ app.use(cors());
 app.use("/api", chatRoutes);
 
 app.get("/test", async (req, res) => {
-  res.json({ message: "this is test for deployment on EC2!" });
+  res.json({ message: "test3: this is test for deployment on EC2!" });
 });
 
 app.listen(PORT, () => {
