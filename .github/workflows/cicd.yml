@@ -16,9 +16,19 @@ jobs:
     strategy:
       matrix:
         node-version: [22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - name: Free up disk space
+      run: |
+        echo "Checking disk space before cleanup..."
+        df -h
+        echo "Cleaning up old files..."
+        sudo apt-get clean
+        sudo apt-get autoclean
+        sudo apt-get autoremove -y
+        echo "Disk space after cleanup..."
+        df -h
+        
     - name: Backup .env
       run: |
           if [ -f .env ]; then mv .env /tmp/env_backup; fi
